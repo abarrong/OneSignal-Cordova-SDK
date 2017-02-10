@@ -261,6 +261,11 @@ static Class delegateClass = nil;
     }];
 }
 
+- (void)clearOneSignalNotifications:(CDVInvokedUrlCommand*)command {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 1;
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+}
+
 - (void)promptLocation:(CDVInvokedUrlCommand*)command {
    [OneSignal promptLocation];
 }
@@ -277,7 +282,6 @@ static Class delegateClass = nil;
 // Android only
 - (void)enableVibrate:(CDVInvokedUrlCommand*)command {}
 - (void)enableSound:(CDVInvokedUrlCommand*)command {}
-- (void)clearOneSignalNotifications:(CDVInvokedUrlCommand*)command {}
 
 
 - (void)setInFocusDisplaying:(CDVInvokedUrlCommand*)command {

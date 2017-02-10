@@ -218,6 +218,10 @@ OneSignal.prototype.postNotification = function(jsonData, onSuccess, onFailure) 
     cordova.exec(onSuccess, onFailure, "OneSignalPush", "postNotification", [jsonData]);
 };
 
+OneSignal.prototype.clearOneSignalNotifications = function() {
+    cordova.exec(function(){}, function(){}, "OneSignalPush", "clearOneSignalNotifications", []);
+};
+
 OneSignal.prototype.promptLocation = function() {
   cordova.exec(function(){}, function(){}, "OneSignalPush", "promptLocation", []);
 };
